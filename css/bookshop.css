@@ -1,0 +1,114 @@
+@font-face { font-family: BioRhyme-Bold; 
+    src: url('../font/BioRhyme-Bold.ttf'); } 
+
+
+
+@font-face { font-family: ConcertOne-Regular; 
+        src: url('../font/ConcertOne-Regular.ttf'); } 
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+   
+}
+
+body {
+    background-image: url('../img/background.jpg')
+}
+
+
+table thead{
+    border-style: groove;
+    border-width: 3px;
+    font-family: 'ConcertOne-Regular';
+    background-color: rgba(227, 234, 255, 0.486);
+    
+}
+
+table thead td{
+    padding: 8px;
+    font-size: 1rem;
+ 
+}
+  
+
+tbody { 
+    border-width: 3px;
+    border-style: groove;
+    border-color: rgb(41, 38, 107);
+    background-color: rgba(161, 161, 223, 0.096);
+    height: 1rem;
+    width: 1rem;
+    text-align: center;
+    
+    
+
+
+}
+
+tbody td {
+padding: 5px;
+border-style: dotted;
+border-color: black;
+border-width: 1px;
+background-color: rgba(192, 212, 255, 0.336);
+font-family: cursive;
+width: 1rem;
+height: 1rem;
+font-size: 1rem;
+}
+
+.modal-content {
+border-radius: 5%;
+padding: 20px;
+ border-style: groove;
+ font-family: 'ConcertOne-Regular';
+ background-image: url('../img/page.jpg');
+}
+
+
+.addBook .btn-primary {
+background-color: rgb(111, 207, 224);
+border-color: rgb(74, 150, 163)
+    
+}
+
+.addBook .btn-primary:hover {
+    background-color: rgb(49, 91, 99);  
+}
+
+.mt-5{
+    font-family: 'BioRhyme-Bold';
+    border-radius: 10%;
+    margin: 10vw;
+    margin-bottom: 2vh;
+    background-color: rgb(111, 207, 224);
+}
+
+.text-center{
+    font-family: 'ConcertOne-Regular';
+    cursor: pointer;
+    margin-bottom: 1vh;
+   
+
+    
+}
+
+.bookMenu td{
+    font-family: 'ConcertOne-Regular';
+
+}
+
+.rate{
+    justify-content: flex-start;
+}
+
+.pagination{
+    justify-content: center;
+}
+
+td{
+    width: 70px;
+}
