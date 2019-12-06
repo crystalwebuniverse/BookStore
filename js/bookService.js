@@ -21,8 +21,8 @@ function createBook(title, cover, price, rating) {
 
 function createBooks() {
 
-    gBooks.push(createBook("The gifts Of imperfection", '../img/gifts.jpg', "10"));
-    gBooks.push(createBook("Daring Greatly", '../img/daring.jpg', "15"));
+    gBooks.push(createBook("The gifts Of imperfection", './img/gifts.jpg', "10"));
+    gBooks.push(createBook("Daring Greatly", './img/daring.jpg', "15"));
 }
 
 function deleteBook(bookId) {
@@ -82,38 +82,35 @@ function getCurrBookId() {
 }
 
 function sortBy(sortId) {
+    
     if (sortId === 'price' && gToggleSort[0] === 0) {
-        var sortByDes = gBooks.sort(function (book1, book2) {
+        var sortBy = gBooks.sort(function (book1, book2) {
             return Number(book1[sortId]) - Number(book2[sortId]);
-        });
-        if (sortId === 'price') gToggleSort[0]++;
-        return gBooks = sortByDes;
-
-    } else if (sortId === 'price' && gToggleSort[0] === 1) {
-        var sortByDes = gBooks.sort(function (book1, book2) {
+        })} else if (sortId === 'price') {
+        var sortBy = gBooks.sort(function (book1, book2) {
             return Number(book2[sortId]) - Number(book1[sortId]);
-        });
-        if (sortId === 'price') gToggleSort[0]--;
-        return gBooks = sortByDes;
-    }
+        })};
 
     if (sortId === 'title' && gToggleSort[1] === 0) {
-        var sortByTitleDes = gBooks.sort(function (book1, book2) {
+        var sortBy = gBooks.sort(function (book1, book2) {
             return book1.title.toUpperCase() < book2.title.toUpperCase() ? -1 : (book1.title.toUpperCase() > book2.title.toUpperCase() ? 1 : 0)
         });
-        gToggleSort[1]++;
-        return gBooks = sortByTitleDes;
 
-    } else if (sortId === 'title' && gToggleSort[1] === 1) {
-        var sortByTitleDes = gBooks.sort(function (book1, book2) {
+    }  else if (sortId === 'title')  {
+        var sortBy = gBooks.sort(function (book1, book2) {
             return book1.title.toUpperCase() > book2.title.toUpperCase() ? -1 : (book1.title.toUpperCase() < book2.title.toUpperCase() ? 1 : 0)
         });
-        gToggleSort[1]--;
-        return gBooks = sortByTitleDes;
-    }
-
+        return gBooks = sortBy;
+}
 }
 
+
+function toggleSortOrder(sortId){
+    if (sortId === 'price'  && gToggleSort[0] === 0) gToggleSort[0]++ 
+    else if (sortId === 'price') gToggleSort[0]--;
+    if (sortId === 'title'  && gToggleSort[1] === 0) gToggleSort[1]++ 
+    else if (sortId === 'title') gToggleSort[1]--;
+}
 
 
 

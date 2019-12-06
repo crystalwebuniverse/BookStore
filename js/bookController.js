@@ -1,7 +1,8 @@
+'use strict'
 function init() {
     createBooks();
     renderBooks();
-    addTouchEvent()
+    addTouchEvent();
 }
 
 function renderBooks() {
@@ -18,8 +19,6 @@ function renderBooks() {
     })
     document.querySelector('.bookMenu').innerHTML = divs.join('');
 
-    //   <td><img class="img-responsive width="260" height="145" src="${book.cover}"></td>
-    // <td>${book.rating}</td>
 }
 
 function onDeleteBook(el) {
@@ -84,8 +83,8 @@ function renderRating() {
 
 function onSortBy(el) {
     var sortId = $(el).attr('sort-id');
+    toggleSortOrder(sortId)
     sortBy(sortId);
-    console.log(gBooks)
     renderBooks();
 
 }
@@ -98,7 +97,6 @@ function addTouchEvent() {
     hmrContainer.on('panleft panright', (ev) => {
         const bookId = (ev.target.closest('TR')).getAttribute('tr-id');
         if (ev.target.nodeName !== ('TD')) return;
-
         if (ev.type === 'panright') {
             ev.target.closest('TR').classList.add('animated', `fadeOutRight`)
             setTimeout(() => {
@@ -116,15 +114,6 @@ function addTouchEvent() {
         var txt = (ev.type === 'panright') ? 'Delete' : 'Read';
 
 
-        var elFeedback = elContainer.querySelector('h1');
-        elFeedback.innerText = txt;
-        elFeedback.classList.add('animated', `tada`)
-        setTimeout(() => {
-            elContainer.querySelector('h1').innerHTML = '&nbsp;';
-            elFeedback.classList.remove('animated', `tada`)
-
-
-        }, 1000)
     });
 
 }
